@@ -1,0 +1,68 @@
+{
+  "expo": {
+    "name": "LS music",
+    "slug": "ls-music",
+    "version": "1.1.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#04050C",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.lsmusic.app",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "audio"
+        ],
+        "NSAppleMusicUsageDescription": "LS music plays the songs stored on your device."
+      }
+    },
+    "android": {
+      "package": "com.lsmusic.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#000000",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png"
+      },
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.SYSTEM_ALERT_WINDOW"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-audio",
+        {
+          "enableBackgroundPlayback": true,
+          "recordAudioAndroid": false,
+          "microphonePermission": false
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "granularPermissions": [
+            "audio"
+          ],
+          "photosPermission": "LS music reads the music on your device so you can play it offline."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 180,
+          "backgroundColor": "#000000"
+        }
+      ],
+      "expo-image",
+      "expo-localization",
+      "expo-font",
+      "expo-asset",
+      "expo-secure-store"
+    ],
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
